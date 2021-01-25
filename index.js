@@ -62,16 +62,16 @@ let {
 } = require('./database/json/setting.json')
 
 ban = []
-premium = ["628311800241@s.whatsapp.net"]
+premium = ["94755681801@s.whatsapp.net"]
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
             + 'FN:Farhan\n'
             + 'ORG:Creator FXC7;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
+            + 'TEL;type=CELL;type=VOICE;waid=94755681801:+94 755-681-801\n'
             + 'END:VCARD'
 
 prefix = '.'
-ig = 'https://www.instagram.com/_farhan_xcode7'
+ig = 'https://www.youtube.com/c/GeekHirusha/'
 name = '~ F X C 7 B O T'
 
 function kyun(seconds){
@@ -114,7 +114,7 @@ async function starts() {
 				try {
 					ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
-					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+					ppimg = 'https://bestlovesms.in/wp-content/uploads/2016/08/friends-forever-whatsapp-dp-profile-pic.jpg'
 				}
 				teks = `Halo @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*`
 				let buff = await getBuffer(ppimg)
@@ -124,9 +124,9 @@ async function starts() {
 				try {
 					ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
 				} catch {
-					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+					ppimg = 'https://bestlovesms.in/wp-content/uploads/2016/08/friends-forever-whatsapp-dp-profile-pic.jpg'
 				}
-				teks = `Sayonara @${num.split('@')[0]}👋`
+				teks = `ආයුබෝවන් @${num.split('@')[0]}👋`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -182,25 +182,25 @@ async function starts() {
 
 			mess = {
 				wait: `*WAIT KAK ${pushname2}* Sedang di Prosess...⏳`,
-				success: '*Sukses...*',
+				success: '*Success...*',
 				error: {
 					stick: ' *Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker*',
 					Iv: '*Link tidak valid*'
 				},
 				only: {
-					group: '*Maaf Perintah ini hanya bisa di gunakan dalam group!*',
-					benned: '*Anda Ke Banned Silahkan Hubungi Owner Agar Membuka Banned Anda*',
-					ownerG: '*Maaf Perintah ini hanya bisa di gunakan oleh owner group!*',
-					ownerB: '*Maaf Perintah ini hanya bisa di gunakan oleh owner bot!* ',
-					premium: '*Fitur Ini Khusus User Premium*',
+					group: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ කණ්ඩායම් වශයෙන් පමණි!*',
+					benned: '*ඔබව තහනම් කර ඇත.ඔබගේ තහනම විවෘත කිරීමට කරුණාකර අයිතිකරු අමතන්න*',
+					ownerG: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ හිමිකරු කණ්ඩායමට පමණි!*',
+					ownerB: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ බොට් හිමිකරුට පමණි!* ',
+					premium: '*මෙම අංගය වාරික භාවිතා කරන්නන් සඳහා පමණි*',
 					userB: `-= | DAFTAR USER | =-\nMaaf *${pushname2}*\nKamu belum Terdaftar didalam database,\n\nUntuk Daftarnya \nContoh : ${prefix}daftar Farhan/17/Banyuwangi\n\n-=⎿ *${name}* ⏋=-`,
-					admin: '*Maaf Perintah ini hanya bisa di gunakan oleh admin group!*',
-					Badmin: '*Maaf Perintah ini hanya bisa di gunakan ketika bot menjadi admin!*'
+					admin: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ කණ්ඩායම් පරිපාලකයින්ට පමණි!*',
+					Badmin: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ බොට් පරිපාලක බවට පත් වූ විට පමණි!*'
 				}
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["628311800241@s.whatsapp.net"]
+			const ownerNumber = ["94755681801@s.whatsapp.net"]
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -885,7 +885,7 @@ async function starts() {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('628311800241@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('94755681801@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'request':
@@ -900,7 +900,7 @@ async function starts() {
                          text: ress,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('628311800241@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('94755681801@s.whatsapp.net', options, text, {quoted: mek})
                     reply('REQUEST ANDA TELAH SAMPAI ke owner BOT, Requests palsu/main2 tidak akan ditanggapi.')
                     break
 				case 'meme':
