@@ -66,13 +66,13 @@ premium = ["94755681801@s.whatsapp.net"]
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
             + 'FN:Farhan\n'
-            + 'ORG:Creator FXC7;\n'
+            + 'ORG:Creator HIRUSHA;\n'
             + 'TEL;type=CELL;type=VOICE;waid=94755681801:+94 755-681-801\n'
             + 'END:VCARD'
 
 prefix = '.'
 ig = 'https://www.youtube.com/c/GeekHirusha/'
-name = '~ F X C 7 B O T'
+name = '~ H I R U S H A B O T'
 
 function kyun(seconds){
   function pad(s){
@@ -184,8 +184,8 @@ async function starts() {
 				wait: `*WAIT KAK ${pushname2}* Sedang di Prosess...⏳`,
 				success: '*Success...*',
 				error: {
-					stick: ' *Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker*',
-					Iv: '*Link tidak valid*'
+					stick: ' *අසමත් විය, රූපය ස්ටිකරයක් බවට පරිවර්තනය කිරීමේදී දෝෂයක් ඇතිවිය*',
+					Iv: '*අවලංගු සබැඳිය*'
 				},
 				only: {
 					group: '*කණගාටුයි, මෙම විධානය භාවිතා කළ හැක්කේ කණ්ඩායම් වශයෙන් පමණි!*',
@@ -249,7 +249,7 @@ async function starts() {
 					let linkgrup = body.slice(6)
 					let islink = linkgrup.match(/(https:\/\/chat.whatsapp.com)/gi)
 					let chekgrup = await client.inviteInfo(linkgrup)
-					if (!islink) return client.reply(from, 'Maaf link group-nya salah! ', id)
+					if (!islink) return client.reply(from, 'කණගාටුයි කණ්ඩායම් සබැඳිය වැරදිය! ', id)
 					if (isOwnerBot) {
 					  await client.joinGroupViaLink(linkgrup)
 					    .then(async () => {
@@ -258,14 +258,14 @@ async function starts() {
 					    })
 					} else {
 					  let cgrup = await client.getAllGroups()
-					  if (cgrup.length > groupLimit) return client.reply(from, `Sorry, the groups is not valid `, id)
-					  if (cgrup.size < memberLimit) return client.reply(from, `Sorry, Bot wil not join if the group members do not exceed ${memberLimit} people`, id)
+					  if (cgrup.length > groupLimit) return client.reply(from, `කණගාටුයි, කණ්ඩායම් වලංගු නොවේ `, id)
+					  if (cgrup.size < memberLimit) return client.reply(from, `කණගාටුයි, කණ්ඩායම් සාමාජිකයන් නොඉක්මවන විට බොට් සම්බන්ධ නොවනු ඇත ${memberLimit} people`, id)
 					  await client.joinGroupViaLink(linkgrup)
 					    .then(async () => {
-					      await client.reply(from, 'Berhasil join grup via link!', id)
+					      await client.reply(from, 'සබැඳිය හරහා කණ්ඩායමට සාර්ථකව සම්බන්ධ විය!', id)
 					    })
 					    .catch(() => {
-					      client.reply(from, 'Gagal!', id)
+					      client.reply(from, 'අසමත් විය!', id)
 					    })
 					}
 					break
@@ -276,18 +276,18 @@ async function starts() {
 					if (isBanned) return reply(mess.only.benned)   
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('pilih enable atau disable udin!!')
+					if (args.length < 1) return reply('udin සක්‍රීය හෝ අක්‍රීය කරන්න තෝරන්න!!')
 					if (args[0] == 'enable') {
-						if (isSimi) return reply('Mode antilink sudah aktif')
+						if (isSimi) return reply('Anti-link mode has been activated')
 						anlink.push(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(anlink))
-						reply(`Sukses mengaktifkan mode antilink`)
+						reply(`Successfully activate anti-link mode`)
 					} else if (args[0] == 'disable') {
 						anlink.splice(from, 1)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(anlink))
-						reply('Sukes menonaktifkan mode antilink️')
+						reply('Successfully deactivated the anti-link mode️')
 					} else {
-						reply('pilih enable atau disable kak?')
+						reply('sis සක්‍රීය හෝ අක්‍රීය කරන්න තෝරන්න?')
 					}
 					break 
 			case 'chatlist':
@@ -332,7 +332,7 @@ async function starts() {
 				uptime = process.uptime()
 				user.push(sender)
         myMonths = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-                myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jum at','Sabtu'];
+                myDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
                 var tgl = new Date();
                 var day = tgl.getDate()
                   bulan = tgl.getMonth()
@@ -357,7 +357,7 @@ async function starts() {
 					me = client.user
 					user.push(sender)
 					uptime = process.uptime()
-					teks = `⟩➢ *Nama Bot* : _${me.name}_\n⟩➢ *Nomer Bot* : _@${me.jid.split('@')[0]}_\n⟩➢ *prefix* : _${prefix}_\n⟩➢ *Total Block* : _${blocked.length}_\n⟩➢ *Aktif Sejak* : _${kyun(uptime)}_\n\n⟩➢ Total Pengguna: *${user.length}* User\n⟩➢ *Instagram* : https://www.instagram.com/_farhan_xcode7\n⟩➢ *Special Thanks To* :\n⟩➢ _Allah SWT_ \n⟩➢ _MahankBarBar`
+					teks = `⟩➢ *Nama Bot* : _${me.name}_\n⟩➢ *Nomer Bot* : _@${me.jid.split('@')[0]}_\n⟩➢ *prefix* : _${prefix}_\n⟩➢ *Total Block* : _${blocked.length}_\n⟩➢ *Active Since* : _${kyun(uptime)}_\n\n⟩➢ Total Pengguna: *${user.length}* User\n⟩➢ *Instagram* : https://www.instagram.com/_farhan_xcode7\n⟩➢ *Special Thanks To* :\n⟩➢ _Allah SWT_ \n⟩➢ _MahankBarBar`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -438,7 +438,7 @@ async function starts() {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`\`\`\`Gagal, pada saat mengkonversi ${tipe} ke stiker\`\`\``)
+								reply(`\`\`\`පරිවර්තනය කිරීමේදී අසමත් විය ${tipe} ke stiker\`\`\``)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -726,14 +726,14 @@ async function starts() {
 				case 'tts':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return client.sendMessage(from, 'Kode bahasanya mana gan?\n Kalo Gatau Kode Bahasanya Apa Aja Ketik Saja *${prefix}bahasa*', text, {quoted: mek})
+					if (args.length < 1) return client.sendMessage(from, 'එය කුමන භාෂා කේතයද, සහෝදරයා? \ N භාෂා කේතය නිවැරදි නොවේ නම්, එය ටයිප් කරන්න *${prefix}භාෂාව*', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'Textnya mana gan?', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, 'පෙළ කොහෙද??', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 600
-					? reply('Textnya kebanyakan gan')
+					? reply('Tදිග වැඩිපුරම සහෝදරයා')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
@@ -749,8 +749,8 @@ async function starts() {
 				case 'translete':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				    if (args.length < 1) return client.sendMessage(from, 'Kode Bahasanya???', text, {quoted: mek})
-				    if (args.length < 2) return client.sendMessage(from, 'Text Yg Mau Di translate??', text, {quoted: mek})
+				    if (args.length < 1) return client.sendMessage(from, 'භාෂා කේතය???', text, {quoted: mek})
+				    if (args.length < 2) return client.sendMessage(from, 'ඔබට පරිවර්තනය කිරීමට අවශ්‍ය පෙළ??', text, {quoted: mek})
 				    ts = body.slice(11)
 				    kode = ts.split("/")[0]
 				    teks = ts.split("/")[1]
@@ -762,8 +762,8 @@ async function starts() {
 				case 'ts':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				    if (args.length < 1) return client.sendMessage(from, 'Kode Bahasanya???', text, {quoted: mek})
-				    if (args.length < 2) return client.sendMessage(from, 'Text Yg Mau Di translate??', text, {quoted: mek})
+				    if (args.length < 1) return client.sendMessage(from, 'භාෂා කේතය???', text, {quoted: mek})
+				    if (args.length < 2) return client.sendMessage(from, 'ඔබට පරිවර්තනය කිරීමට අවශ්‍ය පෙළ??', text, {quoted: mek})
 				    ts = body.slice(4)
 				    kode = ts.split("/")[0]
 				    teks = ts.split("/")[1]
@@ -1233,7 +1233,7 @@ async function starts() {
 			   if (isBanned) return reply(mess.only.benned)    
 			   if (!isUser) return reply(mess.only.userB)
 			   reply(mess.wait)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(7)
                     anu = await fetchJson(`https://arugaz.my.id/api/media/pornhub/search?query=${teks}`, {method: 'get'})
                     teks = `===============\n`
@@ -1248,7 +1248,7 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				reply(mess.wait)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('කොහෙද url එක, සහෝදරයා?')
 					if (!isUrl(args[0]) && !args[0].includes('www.facebook.com')) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/epbe?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
@@ -1265,7 +1265,7 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isPrem) return reply(mess.only.premium)
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('කොහෙද url එක, සහෝදරයා?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/ytv?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
@@ -1274,13 +1274,13 @@ async function starts() {
 					yt4 = await getBuffer(anu.thumb)
 					client.sendMessage(from, yt4, image, {quoted: mek, caption: ytt})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'මෙන්න bro ඔබේ යූ ටියුබ් වීඩියෝව'})
 					break
 				case 'ytmp3':
 				if (isBanned) return reply(mess.only.benned)   
 				if (!isPrem) return reply(mess.only.premium) 
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('කොහෙද url එක, සහෝදරයා?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
 					ytdesc = `Title: *${anu.title}\nSize: *${anu.filesize}*\nDescription: ${anu.desc}`
@@ -1304,7 +1304,7 @@ case 'insta':
 				case 'ytsearch':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Yang mau di cari apa?')
+					if (args.length < 1) return reply('ඔයා බලමින් සිටින්නේ කුමක් ද?')
 					reply(mess.wait)
 					anu = await fetchJson(`http://arugaz.my.id/api/media/ytsearch?query=${body.slice(10)}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -1330,7 +1330,7 @@ case 'insta':
 				case 'tiktok':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('කොහෙද url එක, සහෝදරයා?')
 					if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`http://arugaz.my.id/api/media/tiktok?url=${args[0]}`, {method: 'get'})
@@ -1342,7 +1342,7 @@ case 'insta':
 					try {
 					if (isBanned) return reply(mess.only.benned)    
 					if (!isUser) return reply(mess.only.userB)
-						if (args.length < 1) return client.sendMessage(from, 'Usernamenya mana gan?', text, {quoted: mek})
+						if (args.length < 1) return client.sendMessage(from, 'කොහෙද පරිශීලක නාමය සහෝදරයා?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
 						reply(mess.wait)
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
@@ -1482,7 +1482,7 @@ case 'insta':
 			    case 'ccloud':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(8)
                     reply(mess.wait)
                     cloud = await getBuffer(`https://arugaz.my.id/api/textpro/realcloud?text=${teks}`, {method: 'get'})
@@ -1491,7 +1491,7 @@ case 'insta':
 			    case 'cshadow':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(9)
                     reply(mess.wait)
                     shadow = await getBuffer(`https://tobz-api.herokuapp.com/api/photooxy?theme=shadow&text=${teks}?apikey=${TobzApi}`, {method: 'get'})
@@ -1500,7 +1500,7 @@ case 'insta':
 			    case 'ccsky':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(7)
                     reply(mess.wait)
                     sky = await getBuffer(`https://arugaz.my.id/api/textpro/cloudsky?text=${teks}`, {method: 'get'})
@@ -1509,7 +1509,7 @@ case 'insta':
 			    case 'cssummer':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(10)
                     reply(mess.wait)
                     summer = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummer?text=${teks}`, {method: 'get'})
@@ -1518,7 +1518,7 @@ case 'insta':
 			    case 'cswrite':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(9)
                     reply(mess.wait)
                     write = await getBuffer(`https://arugaz.my.id/api/textpro/sandwrite?text=${teks}`, {method: 'get'})
@@ -1527,7 +1527,7 @@ case 'insta':
 			    case 'csraved':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(9)
                     reply(mess.wait)
                     raved = await getBuffer(`https://arugaz.my.id/api/textpro/sandengraved?text=${teks}`, {method: 'get'})
@@ -1536,7 +1536,7 @@ case 'insta':
 			    case 'csunmory':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(10)
                     reply(mess.wait)
                     sunmory = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummery?text=${teks}`, {method: 'get'})
@@ -1545,7 +1545,7 @@ case 'insta':
 			    case 'cbalon':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(8)
                     reply(mess.wait)
                     balon = await getBuffer(`https://arugaz.my.id/api/textpro/foilballoon?text=${teks}`, {method: 'get'})
@@ -1554,7 +1554,7 @@ case 'insta':
 			    case 'cold':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(6)
                     reply(mess.wait)
                     old = await getBuffer(`https://arugaz.my.id/api/textpro/old1917?text=${teks}`, {method: 'get'})
@@ -1563,7 +1563,7 @@ case 'insta':
 			    case 'cminion':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(9)
                     reply(mess.wait)
                     minion = await getBuffer(`https://arugaz.my.id/api/textpro/miniontext?text=${teks}`, {method: 'get'})
@@ -1572,7 +1572,7 @@ case 'insta':
 			    case 'cglue3d':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(9)
                     reply(mess.wait)
                     glue3d = await getBuffer(`https://arugaz.my.id/api/textpro/glue3d?text=${teks}`, {method: 'get'})
@@ -1581,7 +1581,7 @@ case 'insta':
 			    case 'cholo':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     teks = body.slice(8)
                     reply(mess.wait)
                     holo = await getBuffer(`https://arugaz.my.id/api/textpro/holographic?text=${teks}`, {method: 'get'})
@@ -1590,13 +1590,13 @@ case 'insta':
 				case 'cavengers':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-              	    if (args.length < 1) return reply('teksnya mana gan?')
+              	    if (args.length < 1) return reply('where is the text, bro?')
                     hm = body.slice(11)
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
                     reply(mess.wait)
                     avengers = await getBuffer(`https://arugaz.my.id/api/textpro/avengers?text1=${text1}&text2=${text2}`, {method: 'get'})
-                    client.sendMessage(from, avengers, image, {quoted: mek, caption: 'nih gan'})
+                    client.sendMessage(from, avengers, image, {quoted: mek, caption: 'මෙන්න සහෝදරයා'})
 			     	break
 				case 'cmarvel':
 				if (isBanned) return reply(mess.only.benned)    
@@ -1607,7 +1607,7 @@ case 'insta':
                     text2 = hm.split("/")[1];
                     reply(mess.wait)
                     marvel = await getBuffer(`https://arugaz.my.id/api/textpro/marvelstudio?text1=${text1}&text2=${text2}`, {method: 'get'})
-                    client.sendMessage(from, marvel, image, {quoted: mek, caption: 'nih gan'})
+                    client.sendMessage(from, marvel, image, {quoted: mek, caption: 'මෙන්න සහෝදරයා'})
 			     	break
 				case 'ctext3d':
 				if (isBanned) return reply(mess.only.benned)    
@@ -2001,7 +2001,7 @@ case 'insta':
 						teks += `╠➥ @${mem.jid.split('@')[0]} wa.me/${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					mentions(`╔═══✪ *${pushname2}* ✪══`+ teks +'╚═══〘 FXC7 BOT 〙═══', members_id, true)
+					mentions(`╔═══✪ *${pushname2}* ✪══`+ teks +'╚═══〘 HIRUSHA BOT 〙═══', members_id, true)
 					break
 			    case 'mentionall':
 			    if (isBanned) return reply(mess.only.benned)    
@@ -2014,7 +2014,7 @@ case 'insta':
 						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					mentions(`╔══〘  *${body.slice(12)}*  〙✪══`+teks+'╚═〘 FXC7 BOT 〙', members_id, true)
+					mentions(`╔══〘  *${body.slice(12)}*  〙✪══`+teks+'╚═〘 HIRUSHA BOT 〙', members_id, true)
 					break
 			    case 'kudeta':
 					if (!isGroup) return reply(mess.only.group)
@@ -2062,7 +2062,7 @@ case 'insta':
 				case 'artinama':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Apa yang mau dicari gan?')
+					if (args.length < 1) return reply('ඔයාට මොනවද බලන්න ඕන, සහෝදරයා?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(6)}`, {method: 'get'})
 					reply('Menurut nama:\n\n'+anu.result)
 					break
@@ -2073,7 +2073,7 @@ case 'insta':
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply(`\`\`\`Sukses delete all chat FXC7BOT\`\`\``)
+					reply(`\`\`\`Sukses delete all chat HIRUSHABOT\`\`\``)
 					break
                                 case 'bcgc':
 					client.updatePresence(from, Presence.composing) 
@@ -2106,7 +2106,7 @@ case 'insta':
 						reply('Suksess broadcast')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `[ *FXC7BOT BROADCAST* ]\n\n${body.slice(4)}`)
+							sendMess(_.jid, `[ *HIRUSHABOT BROADCAST* ]\n\n${body.slice(4)}`)
 						}
 						reply('Suksess broadcast')
 					}
@@ -2407,7 +2407,7 @@ case 'insta':
 		case 'jadwalsholat':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Masukan nama daerah!!')
+					if (args.length < 1) return reply('ප්‍රදේශයේ නම ඇතුළත් කරන්න!!')
 					sholat = body.slice(14)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/jadwalshalat?daerah=${sholat}&apiKey=${BarBarApi}`, {method: 'get'})
 					reply(mess.wait)
@@ -2558,7 +2558,7 @@ client.updatePresence(from, Presence.composing)
                 if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
                 	client.updatePresence(from, Presence.composing) 
-					if (!isQuotedVideo) return reply('_*Reply Video nya Gan!*_')
+					if (!isQuotedVideo) return reply('_*පිළිතුරු වීඩියෝ සහෝදරයා!*_')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -2579,7 +2579,7 @@ client.updatePresence(from, Presence.composing)
 					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(enmedia)
 					await client.updateProfilePicture(botNumber, media)
-					reply('Makasih profil barunya😗')
+					reply('නව පැතිකඩට ස්තූතියි😗')
 					break 
 					case 'brainly':
 					if (!isUser) return reply(mess.only.userB)
@@ -2606,7 +2606,7 @@ client.updatePresence(from, Presence.composing)
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						console.log(color('[FXC7BOT]','red'), 'Command Tidak Terdaftar', color(sender.split('@')[0]))
+						console.log(color('[HIRUSHABOT]','red'), 'ලියාපදිංචි නොකළ විධානය', color(sender.split('@')[0]))
 					}
                            }
 		} catch (e) {
