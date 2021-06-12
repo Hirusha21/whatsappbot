@@ -1,0 +1,17 @@
+const donasi = () => { 
+	return `       
+┏━━━━━━━━━━━━━━━━━━━━
+┃        *_DONASI_*  
+┣━━━━━━━━━━━━━━━━━━━━
+┣━⊱❉ DONASI BOSS ❉⊰━━✿
+┃  
+┣━⊱ *PULSA*
+┣⊱ 085900371382
+┣━⊱ *DANA*
+┣⊱ 085900371382
+┃
+┃Gunain doank, kaga donasi
+┗━━━━━━━━━━━━━━━━━━━━`
+}
+
+exports.donasi = donasi
